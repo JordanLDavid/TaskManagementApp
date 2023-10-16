@@ -11,12 +11,12 @@ function formatDateToString(currDate) {
   
 export default function TaskItem({task, onDelete}:TaskItemProp) {
   return (<>
-            <div className="col-sm-8"> {task.title} </div> 
-            <div className="col"> {formatDateToString(task.dueDate)} </div> 
-            <div className="col"> {task.category} </div> 
-            <div className="col">
+            <div className="col-5"> {task.title} </div> 
+            <div className="col-3"> {formatDateToString(task.dueDate)} </div> 
+            <div className="col-2"> {task.category} </div> 
+            <div className="col-2">
             <button className="btn btn-primary" onClick={()=>onDelete(task.id)}>
-                <span className="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                <span className="bi bi-trash"> </span>
             </button>
         </div>
         </>

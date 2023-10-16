@@ -4,6 +4,7 @@ import { Task, TaskListProp } from '../types/types';
 import { useEffect, useState } from 'react';
 import TaskList from './TaskList';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   const LOCAL_STORAGE_KEY = 'jldTaskManager';
@@ -50,10 +51,10 @@ function App() {
 
   return (
     <>
-      <div>
         <TaskForm addTask={AddTask}/>
+        <br/>
+        <br/>
         <TaskList {...taskProps}/>
-      </div>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { Field, Formik, Form } from "formik";
+import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
@@ -15,8 +15,8 @@ export const TaskForm = (addTask:AddTaskProp) => {
         category: Yup.string().oneOf(categories).required("Category required")
         });
 
-    return (<>
-        <div> 
+    return (
+        <>
         <Formik
             initialValues={{
                 id: 1,
@@ -31,42 +31,45 @@ export const TaskForm = (addTask:AddTaskProp) => {
             }}
             >
             {({ errors, touched }) => (
-                <Form >
-                <div className="form-row">
-                    <div className="form-group col-md-4">
+            <Form>
+            <div className="row g-3">
+                    <div className="col-sm-5">
+                    <label>Task Title</label>
                     <Field name="title" className="form-control"/>
                     {errors.title && touched.title ? (
                         <div className="text-danger">{errors.title}</div>
                     ) : null}
-                    </div>
-                    <div className="form-group col-md-4">
+                </div>
+                <div className="col-sm">
+                    <label>Due Date</label>
                     <Field name="dueDate">
-                    {({ field, form }) => (
-                    <DatePicker
-                        id="date"
-                        {...field}
-                        selected={field.value}
-                        onChange={(date) => form.setFieldValue(field.name, date)}
-                        className="form-control col-md-4"
-                    />
-                    )}
+                        {({ field, form }) => (
+                        <DatePicker
+                            id="date"
+                            {...field}
+                            selected={field.value}
+                            onChange={(date) => form.setFieldValue(field.name, date)}
+                            className="form-control col-md-4"
+                        />
+                        )}
                     </Field>
-                    </div>
-                    <div className="form-group col-md-4">
+                </div>
+                <div className="col-sm">
+                    <label>Category</label>
                     <Field name="category" as="select" className="form-control col-md-4">
                         <option value="Work">Work</option>
                         <option value="Personal">Personal</option>
                         <option value="School">School</option>
                     </Field>
                     {errors.category && touched.category ? <div className="text-danger">{errors.category}</div> : null}
-                    </div>
-                    <div className="form-group col-md-4">
+                </div>
+                <div className="col-sm">
+                <br/>
                     <button type="submit" className="btn btn-primary">Submit</button>
-                    </div>
-                    </div>
-                </Form>
-            )}
+                </div>
+            </div>
+            </Form>
+            )}  
         </Formik>
-    </div>
     </>)
 }
