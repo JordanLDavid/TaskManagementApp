@@ -10,16 +10,16 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">Charity Finder App</h3>
+  <h3 align="center">Task Management App</h3>
 
   <p align="center">
-    App that shows charities from every.org
+    App that allows creation of tasks with validation using formik and yup
     <br />
-    <a href="https://github.com/JordanLDavid/CharityFinder">View Demo</a>
+    <a href="https://github.com/JordanLDavid/TaskManagementApp">View Demo</a>
     ·
-    <a href="https://github.com/JordanLDavid/CharityFinder/issues">Report Bug</a>
+    <a href="https://github.com/JordanLDavid/TaskManagementApp/issues">Report Bug</a>
     ·
-    <a href="https://github.com/JordanLDavid/CharityFinder/issues">Request Feature</a>
+    <a href="https://github.com/JordanLDavid/TaskManagementApp/issues">Request Feature</a>
   </p>
 </div>
 
@@ -48,14 +48,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://jld-CharityFinder.netlify.app/)
+[![Product Name Screen Shot][product-screenshot]](https://jld-TaskManager.netlify.app/)
 
-This is a simple charity Finder App made with ReactJs, Vite, Tailwind and Axios
+This is a simple Task Management App made with ReactJs, Vite, Bootstrap, Yup and Formik
 
 Features:
-* Show list of charities
-* Get charity details
-* Select or unselect favorite charities
+* Add tasks
+* Delete Tasks
+* Add due date and category to tasks
 
 ### Built With
 * [![React][React.js]][React-url]
