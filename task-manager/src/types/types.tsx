@@ -6,3 +6,17 @@ export interface Task {
     dueDate : Date;
     category : string;
 }
+
+export interface AddTaskProp {
+    addTask: (task:Task) => void;
+}
+
+export interface TaskListProp {
+    tasks:Task[];
+    onDelete: (id:number)=>void;
+}
+
+export interface TaskItemProp {
+    task:Task;
+    onDelete: (id:number)=>void;
+}
